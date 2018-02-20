@@ -10,7 +10,10 @@ public class MoveByInput : MonoBehaviour
 
 	public void Awake() 
 	{
-		_transform = GetComponent<Transform>();
+		if(_transform == null)
+		{
+			_transform = GetComponent<Transform>();
+		}
 	}
 
 	private void Update() 
