@@ -7,6 +7,7 @@ public class MoveByInput : MonoBehaviour
 	public string HorizontalAxis, VerticalAxis;
 	public float Speed;
 	public Transform _transform;
+	public bool Local = true;
 
 	public void Awake() 
 	{
@@ -40,6 +41,7 @@ public class MoveByInput : MonoBehaviour
 				verticalOffset = MinY - _transform.position.y;
 		}
 
-		_transform.Translate(new Vector3(horizontalOffset, verticalOffset));        	
+		_transform.Translate(new Vector3(horizontalOffset, verticalOffset),
+			Local? Space.Self : Space.World);        	
 	}
 }
