@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour {
 
-	internal void WasHit()
+	public int Bounty = 10;
+	public void WasHit()
 	{
 		GetComponent<Collider>().enabled = false;
 		GetComponent<Rigidbody>().isKinematic = false;
+
+		Game.Manager.AddScore(Bounty);
 	}
 }

@@ -28,5 +28,9 @@ public class Game : MonoBehaviour {
 
 		Manager = this;
 	}
+
+	public void AddScore(int change) {
+		Score += change;
+	}
 	
 }
